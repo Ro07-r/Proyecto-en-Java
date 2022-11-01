@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Proyecto {
     public static void main(String[] args) {
         //Llamamos al menú principal desde el método main
-        menuPrincipal();        
+        menuPrincipal();
     }
     
     //MENÚ PRINCIPAL DEL PROGRAMA 
@@ -24,6 +24,7 @@ public class Proyecto {
             } else {
                 if (opcionMenuPrincipal == 2) {
                     System.out.println("Opcion 2"); //INGRESO EMPLEADO AGREGAR
+                    pagarPedido();
                 } else {
                     if (opcionMenuPrincipal == 3) {
                         System.out.println("¡Gracias por su visita!");
@@ -39,28 +40,33 @@ public class Proyecto {
     //METODO PARA PAGAR EL PEDIDO
     public static void pagarPedido() {
         int opcionPago = 0;
-        System.out.println("----- Elija el medio de pago -----");
-        System.out.println("1. Efectivo");
-        System.out.println("2. Credito");
-        Scanner practica = new Scanner(System.in);
-        System.out.println("Ingrese el número de la opción deseada: ");
-        opcionPago = practica.nextInt();
-        if (opcionPago == 1) {
-            System.out.println("Pago en efectivo"); //AGREGAR
-        } else {
-            if (opcionPago == 2) {
-                System.out.println("Pago con tarjeta"); //AGREGAR
-            } 
-        }
-    }
+        while (opcionPago != 1 && opcionPago != 2){
+            System.out.println("----- Elija el medio de pago -----");
+            System.out.println("1. Efectivo");
+            System.out.println("2. Credito");
+            Scanner practica = new Scanner(System.in);
+            System.out.println("Ingrese el número de la opción deseada: ");
+            opcionPago = practica.nextInt();
+            if (opcionPago == 1){
+                System.out.println("PAGO EFECTIVO"); //Llamar función pagoEfectivo()
+            } else {
+                if (opcionPago == 2){
+                    System.out.println("PAGO TARJETA"); //Llamar función pagoTarjeta
+                } else {
+                    System.out.println("ERROR: La opción elegida no es válida. Porfavor vuelva a intentarlo.");
+                }
+            }            
+        }      
+}
 
     //METODO PARA PAGAR EN EFECTIVO
     public static void pagoEfectivo() { //FALTA COMPLETAR
+        
     }
 
     //METODO PARA INGRESAR UN NUEVO PEDIDO
     public static void ingresoPedido() {
-        int combo1 = 0, combo2 = 0, combo3 = 0, comboCono = 0, comboSundae = 0, comboMcFlurry = 0, opcionPostre = 0, opcionMenu = 0, opcionCafe = 0, comboCapuccino = 0, comboCapTent = 0, comboMac = 0,comboSubm = 0, comboLatte = 0, comboFrappe = 0, comboCroiss = 0, comboPound = 0;
+        int montoTotal = 0, combo1 = 0, combo2 = 0, combo3 = 0, comboCono = 0, comboSundae = 0, comboMcFlurry = 0, opcionPostre = 0, opcionMenu = 0, opcionCafe = 0, comboCapuccino = 0, comboCapTent = 0, comboMac = 0,comboSubm = 0, comboLatte = 0, comboFrappe = 0, comboCroiss = 0, comboPound = 0;
         while (opcionMenu != 1 && opcionMenu != 2 && opcionMenu != 3 && opcionMenu != 4 && opcionMenu != 5) {
             System.out.println("----- Menu Mc UTN -----");
             System.out.println("Elija su pedido");
@@ -85,17 +91,18 @@ public class Proyecto {
                  switch(opcion){
                     case 1:
                         combo1 = combo1 + 1;
-                        //montoTotal = montoTotal + 800; //Suma el precio del combo a la variable montoTotal AGREGAR MONTO TOTAL COMO PARAMETRO
+                        montoTotal = montoTotal + 800; //Suma el precio del combo a la variable montoTotal 
 			System.out.println("Se ha agregado el Combo Simple a su pedido");
                         ingresoPedido();
+
                     case 2:
                         combo2 = combo2 + 1;
-                        //montoTotal = montoTotal + 1200; //Suma el precio del combo a la variable montoTotal AGREGAR MONTO TOTAL COMO PARAMETRO
+                        montoTotal = montoTotal + 1200; //Suma el precio del combo a la variable montoTotal 
                         System.out.println("Se ha agregado el Combo Doble a su pedido");
                         ingresoPedido();
                     case 3:
                         combo3 = combo3 + 1;
-                         //montoTotal = montoTotal + 1400; //Suma el precio del combo a la variable montoTotal //AGREGAR MONTO TOTAL COMO PARAMETRO
+                        montoTotal = montoTotal + 1400; //Suma el precio del combo a la variable montoTotal 
                         System.out.println("Se ha agregado el Combo Triple a su pedido");
                         ingresoPedido();
                     case 4:
@@ -121,17 +128,17 @@ public class Proyecto {
                     switch(opcionPostre){
                         case 1:
                             comboCono = comboCono + 1;
-			    //montoTotal = montoTotal + 60;
+			    montoTotal = montoTotal + 60;
 			    System.out.println("Se ha agregado el postre Cono a su pedido");
                             ingresoPedido();                           
                         case 2:
                             comboSundae = comboSundae + 1;
-			    //montoTotal = montoTotal + 250;
+			    montoTotal = montoTotal + 250;
 			    System.out.println("Se ha agregado el postre Sundae a su pedido");
                             ingresoPedido();                           
                         case 3:
                             comboMcFlurry = comboMcFlurry + 1;
-			    //montoTotal = montoTotal + 350;
+			    montoTotal = montoTotal + 350;
 	                    System.out.println("Se ha agregado el postre McFlurry a su pedido");
                             ingresoPedido();
                         case 4:
@@ -161,42 +168,42 @@ public class Proyecto {
                         switch(opcionCafe){
                             case 1:
                                 comboCapuccino = comboCapuccino + 1;
-                                //montoTotal = montoTotal + 350;
+                                montoTotal = montoTotal + 350;
                                 System.out.println("Se ha agregado Capuccino a su pedido");
                                 ingresoPedido();
                             case 2:
                                 comboCapTent = comboCapTent + 1;
-			        //montoTotal = montoTotal + 390;
+			        montoTotal = montoTotal + 390;
 			        System.out.println("Se ha agregado Capuccino Tentación a su pedido");
                                 ingresoPedido();
                             case 3:
                                 comboMac = comboMac + 1;
-			        //montoTotal = montoTotal + 390;
+			        montoTotal = montoTotal + 390;
                                 System.out.println("Se ha agregado Macchiato Bombón a su pedido");
                                 ingresoPedido();
                             case 4:
                                 comboSubm = comboSubm + 1;
-				//montoTotal = montoTotal + 390;
+				montoTotal = montoTotal + 390;
 				System.out.println("Se ha agregado Submarino a su pedido");
                                 ingresoPedido();
                             case 5:
                                 comboLatte = comboLatte + 1;
-				//montoTotal = montoTotal + 250;
+				montoTotal = montoTotal + 250;
 				System.out.println("Se ha agregado Latte a su pedido");
                                 ingresoPedido();
                             case 6:
                                 comboFrappe = comboFrappe + 1;
-			        //montoTotal = montoTotal + 350;
+			        montoTotal = montoTotal + 350;
 				System.out.println("Se ha agregado Frappe a su pedido");
                                 ingresoPedido();
                             case 7:
                                 comboCroiss = comboCroiss + 1;
-			        //montoTotal = montoTotal + 90;
+			        montoTotal = montoTotal + 90;
 				System.out.println("Se ha agregado Croissant a su pedido");
                                 ingresoPedido();
                             case 8:
                                 comboPound = comboPound + 1;
-				//montoTotal = montoTotal + 100;
+				montoTotal = montoTotal + 100;
                                 System.out.println("Se ha agregado Poundcake a su pedido");
                                 ingresoPedido();
                             case 9:
