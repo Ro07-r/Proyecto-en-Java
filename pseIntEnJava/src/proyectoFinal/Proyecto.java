@@ -3,13 +3,16 @@ package proyectoFinal;
 import java.util.Scanner;
 
 public class Proyecto {
+    static double montoTotal; //Declaramos una variable global
+        
     public static void main(String[] args) {
         //Llamamos al menú principal desde el método main
-        menuPrincipal();
+        montoTotal = 0; //Inicializamos la variable global
+        menuPrincipal(montoTotal);
     }
     
     //MENÚ PRINCIPAL DEL PROGRAMA 
-    public static void menuPrincipal(){
+    public static void menuPrincipal(double montoTotal){        
         int opcionMenuPrincipal = 0;
         while (opcionMenuPrincipal != 1 && opcionMenuPrincipal != 2 && opcionMenuPrincipal != 3) {
             System.out.println("----- Menú Principal Mc UTN -----");
@@ -20,11 +23,11 @@ public class Proyecto {
             System.out.println("Ingrese el número de la opción deseada: ");
             opcionMenuPrincipal = practica.nextInt();
             if (opcionMenuPrincipal == 1) {
-                ingresoPedido(); 
+                ingresoPedido(montoTotal); 
             } else {
                 if (opcionMenuPrincipal == 2) {
-                    System.out.println("Opcion 2"); //INGRESO EMPLEADO AGREGAR
-                    pagarPedido();
+                    System.out.println("Opcion 2"); //INGRESO EMPLEADO AGREGAR  ************************************************************
+                    pagarPedido(montoTotal);
                 } else {
                     if (opcionMenuPrincipal == 3) {
                         System.out.println("¡Gracias por su visita!");
@@ -38,7 +41,7 @@ public class Proyecto {
     }
 
     //METODO PARA PAGAR EL PEDIDO
-    public static void pagarPedido() {
+    public static void pagarPedido(double montoTotal) {
         int opcionPago = 0;
         while (opcionPago != 1 && opcionPago != 2){
             System.out.println("----- Elija el medio de pago -----");
@@ -48,7 +51,8 @@ public class Proyecto {
             System.out.println("Ingrese el número de la opción deseada: ");
             opcionPago = practica.nextInt();
             if (opcionPago == 1){
-                System.out.println("PAGO EFECTIVO"); //Llamar función pagoEfectivo()
+                System.out.println("PAGO EFECTIVO");
+                pagoEfectivo(montoTotal);
             } else {
                 if (opcionPago == 2){
                     System.out.println("PAGO TARJETA"); //Llamar función pagoTarjeta
@@ -57,16 +61,37 @@ public class Proyecto {
                 }
             }            
         }      
-}
-
-    //METODO PARA PAGAR EN EFECTIVO
-    public static void pagoEfectivo() { //FALTA COMPLETAR
-        
     }
 
+    //METODO PARA PAGAR EN EFECTIVO
+    public static void pagoEfectivo(double montoTotal) { 
+        double pagoFinal = 0, vuelto = 0;
+        int efectivo = 0;
+        pagoFinal = montoTotal - (montoTotal*0.05);
+        System.out.println("///5% de descuento///");
+        System.out.println("Pago final: "+pagoFinal);
+        Scanner practica = new Scanner(System.in);
+        while (efectivo < pagoFinal){
+            System.out.println("¿Con cuánto va a abonar?");
+            efectivo = practica.nextInt();
+            if (efectivo < pagoFinal){
+                System.out.println("El pago es insuficiente.");
+            } else {
+                if (efectivo > pagoFinal){
+                    vuelto = efectivo - pagoFinal;
+                    System.out.println("El vuelto del cliente es: "+vuelto);
+                } else {
+                    if (efectivo == pagoFinal){
+                        System.out.println("El monto abonado es exacto, no debes darle vuelto al cliente.");
+                    }
+                }
+            }
+        }
+    }
+    
     //METODO PARA INGRESAR UN NUEVO PEDIDO
-    public static void ingresoPedido() {
-        int montoTotal = 0, combo1 = 0, combo2 = 0, combo3 = 0, comboCono = 0, comboSundae = 0, comboMcFlurry = 0, opcionPostre = 0, opcionMenu = 0, opcionCafe = 0, comboCapuccino = 0, comboCapTent = 0, comboMac = 0,comboSubm = 0, comboLatte = 0, comboFrappe = 0, comboCroiss = 0, comboPound = 0;
+    public static void ingresoPedido(double montoTotal) {
+        int combo1 = 0, combo2 = 0, combo3 = 0, comboCono = 0, comboSundae = 0, comboMcFlurry = 0, opcionPostre = 0, opcionMenu = 0, opcionCafe = 0, comboCapuccino = 0, comboCapTent = 0, comboMac = 0,comboSubm = 0, comboLatte = 0, comboFrappe = 0, comboCroiss = 0, comboPound = 0;
         while (opcionMenu != 1 && opcionMenu != 2 && opcionMenu != 3 && opcionMenu != 4 && opcionMenu != 5) {
             System.out.println("----- Menu Mc UTN -----");
             System.out.println("Elija su pedido");
@@ -93,26 +118,26 @@ public class Proyecto {
                         combo1 = combo1 + 1;
                         montoTotal = montoTotal + 800; //Suma el precio del combo a la variable montoTotal 
 			System.out.println("Se ha agregado el Combo Simple a su pedido");
-                        ingresoPedido();
+                        ingresoPedido(montoTotal);
 
                     case 2:
                         combo2 = combo2 + 1;
                         montoTotal = montoTotal + 1200; //Suma el precio del combo a la variable montoTotal 
                         System.out.println("Se ha agregado el Combo Doble a su pedido");
-                        ingresoPedido();
+                        ingresoPedido(montoTotal);
                     case 3:
                         combo3 = combo3 + 1;
                         montoTotal = montoTotal + 1400; //Suma el precio del combo a la variable montoTotal 
                         System.out.println("Se ha agregado el Combo Triple a su pedido");
-                        ingresoPedido();
+                        ingresoPedido(montoTotal);
                     case 4:
                         //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound); //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
                         break;
                     case 5:
-                        ingresoPedido(); 
+                        ingresoPedido(montoTotal); 
                     default:
                         System.out.println("ERROR: La opción elegida no está dentro del menú. Vuelva a intentarlo.");    
-                        ingresoPedido();
+                        ingresoPedido(montoTotal);
                 }               
             } else {
                 if (opcionMenu == 2){ //Mostramos las opciones de postres
@@ -130,25 +155,25 @@ public class Proyecto {
                             comboCono = comboCono + 1;
 			    montoTotal = montoTotal + 60;
 			    System.out.println("Se ha agregado el postre Cono a su pedido");
-                            ingresoPedido();                           
+                            ingresoPedido(montoTotal);                           
                         case 2:
                             comboSundae = comboSundae + 1;
 			    montoTotal = montoTotal + 250;
 			    System.out.println("Se ha agregado el postre Sundae a su pedido");
-                            ingresoPedido();                           
+                            ingresoPedido(montoTotal);                           
                         case 3:
                             comboMcFlurry = comboMcFlurry + 1;
 			    montoTotal = montoTotal + 350;
 	                    System.out.println("Se ha agregado el postre McFlurry a su pedido");
-                            ingresoPedido();
+                            ingresoPedido(montoTotal);
                         case 4:
                             //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound); //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
                             break;
                         case 5:
-                            ingresoPedido();
+                            ingresoPedido(montoTotal);
                         default:
                             System.out.println("ERROR: La opción elegida no está dentro del menú. Vuelva a intentarlo.");
-                            ingresoPedido();
+                            ingresoPedido(montoTotal);
                     }                   
                 } else {
                     if (opcionMenu == 3){ //Mostramos las opciones de café
@@ -170,50 +195,50 @@ public class Proyecto {
                                 comboCapuccino = comboCapuccino + 1;
                                 montoTotal = montoTotal + 350;
                                 System.out.println("Se ha agregado Capuccino a su pedido");
-                                ingresoPedido();
+                                ingresoPedido(montoTotal);
                             case 2:
                                 comboCapTent = comboCapTent + 1;
 			        montoTotal = montoTotal + 390;
 			        System.out.println("Se ha agregado Capuccino Tentación a su pedido");
-                                ingresoPedido();
+                                ingresoPedido(montoTotal);
                             case 3:
                                 comboMac = comboMac + 1;
 			        montoTotal = montoTotal + 390;
                                 System.out.println("Se ha agregado Macchiato Bombón a su pedido");
-                                ingresoPedido();
+                                ingresoPedido(montoTotal);
                             case 4:
                                 comboSubm = comboSubm + 1;
 				montoTotal = montoTotal + 390;
 				System.out.println("Se ha agregado Submarino a su pedido");
-                                ingresoPedido();
+                                ingresoPedido(montoTotal);
                             case 5:
                                 comboLatte = comboLatte + 1;
 				montoTotal = montoTotal + 250;
 				System.out.println("Se ha agregado Latte a su pedido");
-                                ingresoPedido();
+                                ingresoPedido(montoTotal);
                             case 6:
                                 comboFrappe = comboFrappe + 1;
 			        montoTotal = montoTotal + 350;
 				System.out.println("Se ha agregado Frappe a su pedido");
-                                ingresoPedido();
+                                ingresoPedido(montoTotal);
                             case 7:
                                 comboCroiss = comboCroiss + 1;
 			        montoTotal = montoTotal + 90;
 				System.out.println("Se ha agregado Croissant a su pedido");
-                                ingresoPedido();
+                                ingresoPedido(montoTotal);
                             case 8:
                                 comboPound = comboPound + 1;
 				montoTotal = montoTotal + 100;
                                 System.out.println("Se ha agregado Poundcake a su pedido");
-                                ingresoPedido();
+                                ingresoPedido(montoTotal);
                             case 9:
                                 //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound); //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
                                 break;
                             case 10:
-                                ingresoPedido();
+                                ingresoPedido(montoTotal);
                             default:
                                 System.out.println("ERROR: La opción elegida no está dentro del menú. Vuelva a intentarlo.");
-                                ingresoPedido();
+                                ingresoPedido(montoTotal);
                         }
                     } else {
                         if (opcionMenu == 4 ){
@@ -221,14 +246,13 @@ public class Proyecto {
                             break;
                         } else {
                             if (opcionMenu == 5){
-                                menuPrincipal();
+                                menuPrincipal(montoTotal);
                             } else {
                                 System.out.println("ERROR: La opción elegida no está dentro del menú. Vuelva a intentarlo.");
-                                menuPrincipal();
+                                menuPrincipal(montoTotal);
                             }
                         }
-                    }
-                                        
+                    }                                        
                 }           
             }
         }
