@@ -26,7 +26,7 @@ public class Proyecto {
                 ingresoPedido(montoTotal); 
             } else {
                 if (opcionMenuPrincipal == 2) {
-                    System.out.println("Opcion 2"); //INGRESO EMPLEADO AGREGAR  ************************************************************
+                    System.out.println("Opcion 2"); //ACÁ FALTA AGREGAR EL PROCESO INGRESO EMPLEADO. POR AHORA COLOQUÉ EL PROCESO PAGAR PEDIDO PARA VER SI FUNCIONA.
                     pagarPedido(montoTotal);
                 } else {
                     if (opcionMenuPrincipal == 3) {
@@ -55,12 +55,93 @@ public class Proyecto {
                 pagoEfectivo(montoTotal);
             } else {
                 if (opcionPago == 2){
-                    System.out.println("PAGO TARJETA"); //Llamar función pagoTarjeta
+                    planCuotas(montoTotal);
                 } else {
                     System.out.println("ERROR: La opción elegida no es válida. Porfavor vuelva a intentarlo.");
                 }
             }            
-        }      
+        }
+        montoTotal = 0; //Vuelve a cero el monto para que no siga sumando y poder iniciar un nuevo pedido
+    }
+    
+    //METODO PARA PAGAR CON TARJETA EN UN PAGO
+    public static void pagoConTarjeta(double montoTotal){
+        String datos, cvv = " ", numTarjeta = " ";
+        int año = 0, mes = 0;
+        Scanner practica = new Scanner(System.in);
+        System.out.println("Ingrese nombre y apellido como figura en la tarjeta: ");
+        datos = practica.nextLine();
+        numTarjeta.length(); //Sirve para obtener la longitud de una cadena
+        Scanner entrada = new Scanner(System.in);
+        while (numTarjeta.length() < 16 || numTarjeta.length() > 16){
+            System.out.println("Ingrese los 16 dígitos de la tarjeta: ");
+            numTarjeta = entrada.nextLine();
+            if (numTarjeta.length() > 16){
+                System.out.println("La cantidad de números tiene que ser menor.");
+            } else {
+                if (numTarjeta.length() < 16){
+                    System.out.println("La cantidad de números tiene que ser mayor.");
+                } else {
+                    if (numTarjeta.length() == 16){
+                        System.out.println("Ingresaste correctamente los números de la tarjeta.");
+                    }
+                }
+            }
+        }
+        while (año < 2022){
+            Scanner en = new Scanner(System.in);
+            System.out.println("Ingrese el año de vencimiento de la tarjeta: ");
+            año = en.nextInt();
+            if (año < 2022){
+                System.out.println("Su tarjeta está vencida.");
+            } 
+        }
+        while (mes < 11 && año == 2022){
+            Scanner practice = new Scanner(System.in);
+            System.out.println("Ingrese el número de mes de vencimiento de la tarjeta: ");
+            mes = practice.nextInt();
+            if (mes < 11 && año == 2022){
+                System.out.println("Su tarjeta está vencida.");
+            }
+            while (mes > 12){
+                Scanner on = new Scanner(System.in);
+                System.out.println("El mes no existe.");
+                mes = on.nextInt();
+            }
+        }
+        cvv.length(); //Sirve para obtener la longitud de una cadena
+        Scanner entrance = new Scanner(System.in);
+        while (cvv.length() < 3 || cvv.length() > 3){
+            System.out.println("Ingrese los 3 dígitos del código de seguridad (CVV): ");
+            cvv = entrance.nextLine();       
+        }
+        //Mostramos los datos ingresados
+        System.out.println("Usted ingresó los siguientes datos: ");
+        System.out.println("Número de tarjeta: " + numTarjeta + " Vencimiento: " + mes + "/" + año + " CVV: " + cvv);
+    }
+    
+    //METODO PARA PAGAR CON TARJETA
+    public static void planCuotas(double montoTotal){
+        int opcionCuotas = 0;
+        System.out.println("1 cuota ---> Sin interes");
+        System.out.println("2 cuotas ---> 5% interes");
+        System.out.println("3 cuotas ---> 10% interes");
+        Scanner practica = new Scanner(System.in);
+        while (opcionCuotas != 1 && opcionCuotas != 2 && opcionCuotas !=3){
+            System.out.println("Elija una opción");
+            opcionCuotas = practica.nextInt();
+            if (opcionCuotas == 1){
+                pagoConTarjeta(montoTotal); 
+            } else {
+                if (opcionCuotas == 2){
+                    System.out.println("PAGO EN 2 CUOTAS"); //FALTA AGREGAR METODO PARA PAGAR EN 2 CUOTAS
+                } else {
+                    if (opcionCuotas == 3){
+                        System.out.println("PAGO EN 3 CUOTAS"); //FALTA AGREGAR METODO PARA PAGAR EN 3 CUOTAS
+                    }
+                }
+            }
+        }        
     }
 
     //METODO PARA PAGAR EN EFECTIVO
@@ -80,9 +161,11 @@ public class Proyecto {
                 if (efectivo > pagoFinal){
                     vuelto = efectivo - pagoFinal;
                     System.out.println("El vuelto del cliente es: "+vuelto);
+                    System.out.println("¡Gracias por su compra!");
                 } else {
                     if (efectivo == pagoFinal){
                         System.out.println("El monto abonado es exacto, no debes darle vuelto al cliente.");
+                        System.out.println("¡Gracias por su compra!");
                     }
                 }
             }
@@ -98,8 +181,8 @@ public class Proyecto {
             System.out.println("1. Combos");
             System.out.println("2. Postres");
             System.out.println("3. Mc Café");
-            System.out.println("4. Finalizar pedido"); //Llamar función finalizarPedido()
-            System.out.println("5. Volver al menú principal"); //Llamar función menuPrincipal()
+            System.out.println("4. Finalizar pedido"); //Llama la función finalizarPedido()
+            System.out.println("5. Volver al menú principal"); //Llama la función menuPrincipal()
             Scanner practica = new Scanner(System.in);
             System.out.println("Ingrese el número de la opción deseada: ");
             opcionMenu = practica.nextInt();
@@ -108,8 +191,8 @@ public class Proyecto {
                 System.out.println("1. Combo Simple (Hamburguesa simple + Bebida + Papas) - $800");
                 System.out.println("2. Combo Doble (Hamburguesa doble + Bebida + Papas) - $1200");
                 System.out.println("3. Combo Triple (Hamburguesa triple + Bebida + Papas) - $1400");
-                System.out.println("4. Finalizar pedido"); //Llamar función finalizarPedido()
-                System.out.println("5. Volver al menú para elegir pedido"); //Llamar función ingresoPedido()
+                System.out.println("4. Finalizar pedido"); //Llama la función finalizarPedido()
+                System.out.println("5. Volver al menú para elegir pedido"); //Llama la función ingresoPedido()
                 Scanner practice = new Scanner(System.in);
                 System.out.println("Ingrese el número de la opción deseada: ");
                 opcion = practice.nextInt();
@@ -119,7 +202,6 @@ public class Proyecto {
                         montoTotal = montoTotal + 800; //Suma el precio del combo a la variable montoTotal 
 			System.out.println("Se ha agregado el Combo Simple a su pedido");
                         ingresoPedido(montoTotal);
-
                     case 2:
                         combo2 = combo2 + 1;
                         montoTotal = montoTotal + 1200; //Suma el precio del combo a la variable montoTotal 
@@ -131,7 +213,9 @@ public class Proyecto {
                         System.out.println("Se ha agregado el Combo Triple a su pedido");
                         ingresoPedido(montoTotal);
                     case 4:
-                        //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound); //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
+                        //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound);
+                        //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
+                        //FALTA AGREGAR METODO PARA FINALIZAR EL PEDIDO
                         break;
                     case 5:
                         ingresoPedido(montoTotal); 
@@ -145,8 +229,8 @@ public class Proyecto {
                     System.out.println("1. Cono");
                     System.out.println("2. Sundae");
                     System.out.println("3. McFlurry");
-                    System.out.println("4. Finalizar pedido"); //Llamar función finalizarPedido()
-                    System.out.println("5. Volver al menú para elegir pedido"); //Llamar función ingresoPedido()
+                    System.out.println("4. Finalizar pedido"); //Llama la función finalizarPedido()
+                    System.out.println("5. Volver al menú para elegir pedido"); //Llama la función ingresoPedido()
                     Scanner entrada = new Scanner(System.in);
                     System.out.println("Elija su postre: ");
                     opcionPostre = entrada.nextInt();
@@ -155,7 +239,7 @@ public class Proyecto {
                             comboCono = comboCono + 1;
 			    montoTotal = montoTotal + 60;
 			    System.out.println("Se ha agregado el postre Cono a su pedido");
-                            ingresoPedido(montoTotal);                           
+                            ingresoPedido(montoTotal);
                         case 2:
                             comboSundae = comboSundae + 1;
 			    montoTotal = montoTotal + 250;
@@ -167,7 +251,9 @@ public class Proyecto {
 	                    System.out.println("Se ha agregado el postre McFlurry a su pedido");
                             ingresoPedido(montoTotal);
                         case 4:
-                            //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound); //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
+                            //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound);
+                            //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
+                            //FALTA AGREGAR METODO PARA FINALIZAR EL PEDIDO
                             break;
                         case 5:
                             ingresoPedido(montoTotal);
@@ -185,8 +271,8 @@ public class Proyecto {
                         System.out.println("6. Frappe - $350");
                         System.out.println("7. Croissant - $90");
                         System.out.println("8. Poundcake - $100");
-                        System.out.println("9. Finalizar pedido"); //Llamar función finalizarPedido()
-                        System.out.println("10. Volver al menú para elegir pedido"); //Llamar función ingresoPedido()
+                        System.out.println("9. Finalizar pedido"); //Llama la función finalizarPedido()
+                        System.out.println("10. Volver al menú para elegir pedido"); //Llama la función ingresoPedido()
                         Scanner entrance = new Scanner(System.in);
                         System.out.println("Elija la opción Mc café: ");
                         opcionCafe = entrance.nextInt();
@@ -232,7 +318,9 @@ public class Proyecto {
                                 System.out.println("Se ha agregado Poundcake a su pedido");
                                 ingresoPedido(montoTotal);
                             case 9:
-                                //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound); //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
+                                //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound);
+                                //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
+                                //FALTA AGREGAR METODO PARA FINALIZAR EL PEDIDO
                                 break;
                             case 10:
                                 ingresoPedido(montoTotal);
@@ -242,7 +330,9 @@ public class Proyecto {
                         }
                     } else {
                         if (opcionMenu == 4 ){
-                            //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound); //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
+                            //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound);
+                            //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
+                            //FALTA AGREGAR METODO PARA FINALIZAR EL PEDIDO
                             break;
                         } else {
                             if (opcionMenu == 5){
