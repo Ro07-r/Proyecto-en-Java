@@ -88,28 +88,32 @@ public class Proyecto {
                 }
             }
         }
-        
-        while (año < 2022){
-            Scanner en = new Scanner(System.in);
-            System.out.println("Ingrese el año de vencimiento de la tarjeta: ");
-            año = en.nextInt();
-            if (año < 2022){
-                System.out.println("Su tarjeta está vencida.");
-            } 
-        }
-        while (mes < 11 && año == 2022){
-            Scanner practice = new Scanner(System.in);
-            System.out.println("Ingrese el número de mes de vencimiento de la tarjeta: ");
-            mes = practice.nextInt();
-            if (mes < 11 && año == 2022){
-                System.out.println("Su tarjeta está vencida.");
+         while (año < 2022){
+            Scanner prac = new Scanner(System.in);
+            System.out.println("Ingrese el año: ");
+            año = prac.nextInt();
+            if (año > 2022){
+                Scanner practice = new Scanner(System.in);
+                System.out.println("Ingrese el mes: ");
+                mes = practice.nextInt();
+                while (mes < 1 || mes > 12){
+                        Scanner en = new Scanner(System.in); 
+                        System.out.println("Ingrese el mes: ");
+                        mes = en.nextInt();
+                    }
+            } else {
+                if (año == 2022){
+                    Scanner practice = new Scanner(System.in); 
+                    System.out.println("Ingrese el mes: ");
+                    mes = practice.nextInt();
+                    while (mes < 11 || mes > 12){
+                        Scanner en = new Scanner(System.in); 
+                        System.out.println("Ingrese el mes: ");
+                        mes = en.nextInt();
+                    }
+                }
             }
-            while (mes > 12){
-                Scanner on = new Scanner(System.in);
-                System.out.println("El mes no existe.");
-                mes = on.nextInt();
-            }
-        }
+        }        
         cvv.length(); //Sirve para obtener la longitud de una cadena
         Scanner entrance = new Scanner(System.in);
         while (cvv.length() < 3 || cvv.length() > 3){
