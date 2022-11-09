@@ -88,6 +88,7 @@ public class Proyecto {
                 }
             }
         }
+        
         while (año < 2022){
             Scanner en = new Scanner(System.in);
             System.out.println("Ingrese el año de vencimiento de la tarjeta: ");
@@ -135,18 +136,42 @@ public class Proyecto {
             } else {
                 if (opcionCuotas == 2){
                     System.out.println("PAGO EN 2 CUOTAS"); //FALTA AGREGAR METODO PARA PAGAR EN 2 CUOTAS
+                    pagoDosCuotas(montoTotal);
                 } else {
                     if (opcionCuotas == 3){
                         System.out.println("PAGO EN 3 CUOTAS"); //FALTA AGREGAR METODO PARA PAGAR EN 3 CUOTAS
+                        pagoTresCuotas(montoTotal);
                     }
                 }
             }
         }        
     }
+    
+    //metodo para pagar en 2 cuotas 
+    public static void pagoDosCuotas(double montoTotal){
+    pagoConTarjeta(montoTotal);
+        System.out.println(" ");
+         double cuotas,  opcionDosCuotas;
+         opcionDosCuotas = montoTotal + (montoTotal*0.05);
+         cuotas = opcionDosCuotas/2;
+         System.out.println("El precio final es: $"+ opcionDosCuotas +" y lascuotas de:$ "+ cuotas);
+        
+    
+    }
+    //Metodo Para pagar en 3 cuotas 
+    public static void pagoTresCuotas(double montoTotal){
+    pagoConTarjeta(montoTotal);
+        System.out.println(" ");
+        double cuotas, opcionTresCuotas;
+        opcionTresCuotas = montoTotal + (montoTotal*0.10);
+        cuotas = opcionTresCuotas/3;
+        System.out.println("El precio final es: $ "+ opcionTresCuotas+ " y las cuotas de:$"+cuotas);
+    
+    }
 
     //METODO PARA PAGAR EN EFECTIVO
     public static void pagoEfectivo(double montoTotal) { 
-        double pagoFinal = 0, vuelto = 0;
+        double pagoFinal = 0 , vuelto = 0 ;
         int efectivo = 0;
         pagoFinal = montoTotal - (montoTotal*0.05);
         System.out.println("///5% de descuento///");
