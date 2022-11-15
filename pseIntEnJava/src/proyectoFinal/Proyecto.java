@@ -51,7 +51,6 @@ public class Proyecto {
             System.out.println("Ingrese el número de la opción deseada: ");
             opcionPago = practica.nextInt();
             if (opcionPago == 1){
-                System.out.println("PAGO EFECTIVO");
                 pagoEfectivo(montoTotal);
             } else {
                 if (opcionPago == 2){
@@ -201,6 +200,20 @@ public class Proyecto {
         }
     }
     
+    // METODO PARA FINALIZAR PEDIDO
+    public static void finalizarPedido(double montoTotal, int combo1, int combo2, int combo3, int comboCono,
+            int comboSundae, int comboMcFlurry, int opcionPostre, int opcionMenu, int opcionCafe, int comboCapuccino,
+            int comboCapTent, int comboMac, int comboSubm, int comboLatte, int comboFrappe, int comboCroiss,
+            int comboPound) {
+        System.out.println("********************************************************************************");
+        System.out.println("Se ha cerrado la orden");
+        // mostrarCombos(); FALTA HACER EL METODO mostrarCombos()
+        System.out.println("El monto total a abonar es $" + montoTotal);
+        System.out.println("********************************************************************************");
+        System.out.println("Proceda a elegir el medio de pago");
+        pagarPedido(montoTotal);
+    }
+    
     //METODO PARA INGRESAR UN NUEVO PEDIDO
     public static void ingresoPedido(double montoTotal) {
         int combo1 = 0, combo2 = 0, combo3 = 0, comboCono = 0, comboSundae = 0, comboMcFlurry = 0, opcionPostre = 0, opcionMenu = 0, opcionCafe = 0, comboCapuccino = 0, comboCapTent = 0, comboMac = 0,comboSubm = 0, comboLatte = 0, comboFrappe = 0, comboCroiss = 0, comboPound = 0;
@@ -242,9 +255,9 @@ public class Proyecto {
                         System.out.println("Se ha agregado el Combo Triple a su pedido");
                         ingresoPedido(montoTotal);
                     case 4:
-                        //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound);
                         //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
-                        //FALTA AGREGAR METODO PARA FINALIZAR EL PEDIDO
+                        finalizarPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, opcionPostre, opcionMenu, opcionCafe, comboCapuccino,
+                                        comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound);
                         break;
                     case 5:
                         ingresoPedido(montoTotal); 
@@ -280,9 +293,9 @@ public class Proyecto {
 	                    System.out.println("Se ha agregado el postre McFlurry a su pedido");
                             ingresoPedido(montoTotal);
                         case 4:
-                            //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound);
                             //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
-                            //FALTA AGREGAR METODO PARA FINALIZAR EL PEDIDO
+                            finalizarPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, opcionPostre, opcionMenu, opcionCafe, comboCapuccino,
+                                            comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound);
                             break;
                         case 5:
                             ingresoPedido(montoTotal);
@@ -347,9 +360,9 @@ public class Proyecto {
                                 System.out.println("Se ha agregado Poundcake a su pedido");
                                 ingresoPedido(montoTotal);
                             case 9:
-                                //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound);
                                 //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
-                                //FALTA AGREGAR METODO PARA FINALIZAR EL PEDIDO
+                                finalizarPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, opcionPostre, opcionMenu, opcionCafe, comboCapuccino,
+                                                comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound);
                                 break;
                             case 10:
                                 ingresoPedido(montoTotal);
@@ -359,9 +372,9 @@ public class Proyecto {
                         }
                     } else {
                         if (opcionMenu == 4 ){
-                            //finalizarPedido(montoTotal,combo1,combo2,combo3,comboCono,comboSundae,comboMcFlurry,comboCapuccino,comboCapTent,comboMac,comboSubm,comboLatte,comboFrappe,comboCroiss,comboPound);
                             //Llama a la función finalizarPedido para mostrar el pedido y realizar el pago
-                            //FALTA AGREGAR METODO PARA FINALIZAR EL PEDIDO
+                            finalizarPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, opcionPostre, opcionMenu, opcionCafe, comboCapuccino,
+                                            comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound);
                             break;
                         } else {
                             if (opcionMenu == 5){
