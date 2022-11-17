@@ -132,15 +132,15 @@ public class login extends javax.swing.JFrame {
                 //JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente. Bienvenido");
                 setVisible(false);
                 Scanner tecla = new Scanner(System.in);
-                System.out.println("---- Login correcto ------ ");
+                System.out.println("**********************************************");
+                System.out.println("              Login correcto                  ");
+                System.out.println("**********************************************");
+                System.out.println("     Bienvenido/a "+ user + " a McUTN         ");
                 System.out.println("");
-                System.out.println("---- Bienvenido/a "+ user + " a McUTN ------ ");
-                System.out.println("");
-                System.out.println("Presione Enter para continuar...");
+                System.out.println("      Presione Enter para continuar...          ");
                 String continuar = tecla.nextLine();
-                System.out.println("");
-                System.out.println("");
-                System.out.println("");                                
+                System.out.println("**********************************************");
+                System.out.println("**********************************************");
                 double montoTotal = 0; //Inicializamos la variable global
                 menuPrincipal(montoTotal);//Instanciamos menuprincipal
                 
