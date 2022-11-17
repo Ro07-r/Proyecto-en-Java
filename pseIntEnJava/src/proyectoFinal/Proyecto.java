@@ -1,5 +1,5 @@
 package proyectoFinal;
-
+import login_JFrame.login;
 import java.util.Scanner;
 
 public class Proyecto {
@@ -7,10 +7,13 @@ public class Proyecto {
         
     public static void main(String[] args) {
         //Llamamos al menú principal desde el método main
-        montoTotal = 0; //Inicializamos la variable global
-        menuPrincipal(montoTotal);
+        //montoTotal = 0; //Inicializamos la variable global
+        login login = new login();
+        login.setVisible(true);
+        //menuPrincipal(montoTotal);
     }
     
+        
     //MENÚ PRINCIPAL DEL PROGRAMA 
     public static void menuPrincipal(double montoTotal){        
         int opcionMenuPrincipal = 0;
@@ -26,8 +29,10 @@ public class Proyecto {
                 ingresoPedido(montoTotal); 
             } else {
                 if (opcionMenuPrincipal == 2) {
-                    System.out.println("Opcion 2"); //ACÁ FALTA AGREGAR EL PROCESO INGRESO EMPLEADO. POR AHORA COLOQUÉ EL PROCESO PAGAR PEDIDO PARA VER SI FUNCIONA.
-                    pagarPedido(montoTotal);
+                    System.out.println("Opcion 2");
+                    login login = new login();
+                    login.setVisible(true);
+                    
                 } else {
                     if (opcionMenuPrincipal == 3) {
                         System.out.println("¡Gracias por su visita!");
@@ -61,6 +66,7 @@ public class Proyecto {
             }            
         }
         montoTotal = 0; //Vuelve a cero el monto para que no siga sumando y poder iniciar un nuevo pedido
+        
     }
     
     //METODO PARA PAGAR CON TARJETA EN UN PAGO
@@ -179,6 +185,7 @@ public class Proyecto {
         pagoFinal = montoTotal - (montoTotal*0.05);
         System.out.println("///5% de descuento///");
         System.out.println("Pago final: "+pagoFinal);
+        
         Scanner practica = new Scanner(System.in);
         while (efectivo < pagoFinal){
             System.out.println("¿Con cuánto va a abonar?");
@@ -189,11 +196,14 @@ public class Proyecto {
                 if (efectivo > pagoFinal){
                     vuelto = efectivo - pagoFinal;
                     System.out.println("El vuelto del cliente es: "+vuelto);
+                    System.out.println("");
                     System.out.println("¡Gracias por su compra!");
                 } else {
                     if (efectivo == pagoFinal){
                         System.out.println("El monto abonado es exacto, no debes darle vuelto al cliente.");
+                        System.out.println("");
                         System.out.println("¡Gracias por su compra!");
+                        break;
                     }
                 }
             }
