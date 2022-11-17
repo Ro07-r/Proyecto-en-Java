@@ -7,7 +7,7 @@ public class Proyecto {
         
     public static void main(String[] args) {
         //Llamamos al menú principal desde el método main
-        //montoTotal = 0; //Inicializamos la variable global
+        montoTotal = 0; //Inicializamos la variable global
         login login = new login();
         login.setVisible(true);
         //menuPrincipal(montoTotal);
@@ -18,6 +18,7 @@ public class Proyecto {
     public static void menuPrincipal(double montoTotal){        
         int opcionMenuPrincipal = 0;
         while (opcionMenuPrincipal != 1 && opcionMenuPrincipal != 2 && opcionMenuPrincipal != 3) {
+            System.out.println("");
             System.out.println("----- Menú Principal Mc UTN -----");
             System.out.println("1. Ingresar nuevo pedido");
             System.out.println("2. Cambio de turno"); //Sirve para cambiar de empleado en el sistema
@@ -35,9 +36,11 @@ public class Proyecto {
                     
                 } else {
                     if (opcionMenuPrincipal == 3) {
+                        System.out.println("");
                         System.out.println("¡Gracias por su visita!");
                         break;
                     } else {
+                        System.out.println("");
                         System.out.println("ERROR: La opción elegida no está dentro del menú. Vuelva a intentarlo.");
                     }
                 }
@@ -59,8 +62,10 @@ public class Proyecto {
                 pagoEfectivo(montoTotal);
             } else {
                 if (opcionPago == 2){
+                    System.out.println("");
                     planCuotas(montoTotal);
                 } else {
+                    System.out.println("");
                     System.out.println("ERROR: La opción elegida no es válida. Porfavor vuelva a intentarlo.");
                 }
             }            
@@ -74,20 +79,25 @@ public class Proyecto {
         String datos, cvv = " ", numTarjeta = " ";
         int año = 0, mes = 0;
         Scanner practica = new Scanner(System.in);
+        System.out.println("");
         System.out.println("Ingrese nombre y apellido como figura en la tarjeta: ");
         datos = practica.nextLine();
         numTarjeta.length(); //Sirve para obtener la longitud de una cadena
         Scanner entrada = new Scanner(System.in);
         while (numTarjeta.length() < 16 || numTarjeta.length() > 16){
+            System.out.println("");
             System.out.println("Ingrese los 16 dígitos de la tarjeta: ");
             numTarjeta = entrada.nextLine();
             if (numTarjeta.length() > 16){
+                System.out.println("");
                 System.out.println("La cantidad de números tiene que ser menor.");
             } else {
                 if (numTarjeta.length() < 16){
+                    System.out.println("");
                     System.out.println("La cantidad de números tiene que ser mayor.");
                 } else {
                     if (numTarjeta.length() == 16){
+                        System.out.println("");
                         System.out.println("Ingresaste correctamente los números de la tarjeta.");
                     }
                 }
@@ -95,10 +105,12 @@ public class Proyecto {
         }
          while (año < 2022){
             Scanner prac = new Scanner(System.in);
+            System.out.println("");
             System.out.println("Ingrese el año: ");
             año = prac.nextInt();
             if (año > 2022){
                 Scanner practice = new Scanner(System.in);
+                System.out.println("");
                 System.out.println("Ingrese el mes: ");
                 mes = practice.nextInt();
                 while (mes < 1 || mes > 12){
@@ -109,10 +121,12 @@ public class Proyecto {
             } else {
                 if (año == 2022){
                     Scanner practice = new Scanner(System.in); 
-                    System.out.println("Ingrese el mes: ");
+                    System.out.println("");
+                    System.out.println("Ingrese el mes: ");                    
                     mes = practice.nextInt();
                     while (mes < 11 || mes > 12){
                         Scanner en = new Scanner(System.in); 
+                        System.out.println("");
                         System.out.println("Ingrese el mes: ");
                         mes = en.nextInt();
                     }
@@ -122,12 +136,19 @@ public class Proyecto {
         cvv.length(); //Sirve para obtener la longitud de una cadena
         Scanner entrance = new Scanner(System.in);
         while (cvv.length() < 3 || cvv.length() > 3){
+            System.out.println("");
             System.out.println("Ingrese los 3 dígitos del código de seguridad (CVV): ");
             cvv = entrance.nextLine();       
         }
         //Mostramos los datos ingresados
+        System.out.println("");
         System.out.println("Usted ingresó los siguientes datos: ");
+        System.out.println("");
         System.out.println("Número de tarjeta: " + numTarjeta + " Vencimiento: " + mes + "/" + año + " CVV: " + cvv);
+        System.out.println("");
+        System.out.println("El pago se ha efectuado de forama exitosa ¡Gracias por su compra!");
+        System.out.println("------------------------------------------------");
+        System.out.println("------------------------------------------------");
     }
     
     //METODO PARA PAGAR CON TARJETA
@@ -144,11 +165,13 @@ public class Proyecto {
                 pagoConTarjeta(montoTotal); 
             } else {
                 if (opcionCuotas == 2){
-                    System.out.println("PAGO EN 2 CUOTAS"); //FALTA AGREGAR METODO PARA PAGAR EN 2 CUOTAS
+                    System.out.println("");
+                    System.out.println("PAGO EN 2 CUOTAS"); 
                     pagoDosCuotas(montoTotal);
                 } else {
                     if (opcionCuotas == 3){
-                        System.out.println("PAGO EN 3 CUOTAS"); //FALTA AGREGAR METODO PARA PAGAR EN 3 CUOTAS
+                        System.out.println("");
+                        System.out.println("PAGO EN 3 CUOTAS"); 
                         pagoTresCuotas(montoTotal);
                     }
                 }
@@ -163,6 +186,7 @@ public class Proyecto {
          double cuotas,  opcionDosCuotas;
          opcionDosCuotas = montoTotal + (montoTotal*0.05);
          cuotas = opcionDosCuotas/2;
+         System.out.println("");
          System.out.println("El precio final es: $"+ opcionDosCuotas +" y lascuotas de:$ "+ cuotas);
         
     
@@ -174,6 +198,7 @@ public class Proyecto {
         double cuotas, opcionTresCuotas;
         opcionTresCuotas = montoTotal + (montoTotal*0.10);
         cuotas = opcionTresCuotas/3;
+        System.out.println("");
         System.out.println("El precio final es: $ "+ opcionTresCuotas+ " y las cuotas de:$"+cuotas);
     
     }
@@ -183,26 +208,34 @@ public class Proyecto {
         double pagoFinal = 0 , vuelto = 0 ;
         int efectivo = 0;
         pagoFinal = montoTotal - (montoTotal*0.05);
+        System.out.println("");
         System.out.println("///5% de descuento///");
         System.out.println("Pago final: "+pagoFinal);
         
         Scanner practica = new Scanner(System.in);
         while (efectivo < pagoFinal){
+            System.out.println("");
             System.out.println("¿Con cuánto va a abonar?");
             efectivo = practica.nextInt();
             if (efectivo < pagoFinal){
+                System.out.println("");
                 System.out.println("El pago es insuficiente.");
             } else {
                 if (efectivo > pagoFinal){
                     vuelto = efectivo - pagoFinal;
+                    System.out.println("");
                     System.out.println("El vuelto del cliente es: "+vuelto);
                     System.out.println("");
                     System.out.println("¡Gracias por su compra!");
+                    System.out.println("------------------------------------------------");
+                    System.out.println("------------------------------------------------");
                 } else {
                     if (efectivo == pagoFinal){
                         System.out.println("El monto abonado es exacto, no debes darle vuelto al cliente.");
                         System.out.println("");
                         System.out.println("¡Gracias por su compra!");
+                        System.out.println("------------------------------------------------");
+                        System.out.println("------------------------------------------------");
                         break;
                     }
                 }

@@ -1,5 +1,4 @@
 package login_JFrame;
-import java.io.IOException;
 import java.sql.SQLException;
 import proyectoFinal.Conexion;
 import java.sql.Statement;
@@ -148,7 +147,7 @@ public class login extends javax.swing.JFrame {
                 
             }
             else {
-                JOptionPane.showMessageDialog(null, "Usuario no se encuentra registrado en la base de datos");
+                JOptionPane.showMessageDialog(null, "Usuario o Password inválido. Inténtelo nuevamente");
             }
             
         } catch (SQLException ex) {
