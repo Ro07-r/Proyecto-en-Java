@@ -39,7 +39,8 @@ public class Proyecto {
                     if (opcionMenuPrincipal == 3) {
                         System.out.println("");
                         System.out.println("¡Gracias por su visita!");
-                        break;
+                        System.exit(0);
+                        
                     } else {
                         System.out.println("");
                         System.out.println("ERROR: La opción elegida no está dentro del menú. Vuelva a intentarlo.");
