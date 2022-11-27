@@ -142,7 +142,7 @@ public class login extends javax.swing.JFrame {
                 System.out.println("**********************************************");
                 System.out.println("**********************************************");
                 double montoTotal = 0; //Inicializamos la variable global
-                menuPrincipal(montoTotal);//Instanciamos menuprincipal
+                //menuPrincipal(montoTotal);//Instanciamos menuprincipal
                 
                 
             }
