@@ -10,9 +10,9 @@ public class Proyecto {
     public static void main(String[] args) {
         //Llamamos al menú principal desde el método main
         montoTotal = 0; //Inicializamos la variable global
-        //login login = new login();
-        //login.setVisible(true);
-        menuPrincipal(montoTotal); 
+        login login = new login();
+        login.setVisible(true);
+        //menuPrincipal(montoTotal); 
     }
 
     //MENÚ PRINCIPAL DEL PROGRAMA 
