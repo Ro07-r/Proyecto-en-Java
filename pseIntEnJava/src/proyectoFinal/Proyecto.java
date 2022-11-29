@@ -254,7 +254,27 @@ public class Proyecto {
             int comboPound) {
         System.out.println("********************************************************************************");
         System.out.println("Se ha cerrado la orden");
-        //mostrarCombos(); //FALTA HACER EL METODO mostrarCombos()
+        }
+        //mostrarCombos(); //METODO mostrarCombos()
+         public static void MostrarCombos(double montoTotal,int combo1,int combo2, int combo3, int combo4){
+         
+         if(combo1>0){
+        
+           System.out.println( "* Combo Simple (Hamburguesa simple + Bebida + Papas) -- $800 X ");
+         }
+         if(combo2>0)  { 
+             
+             System.out.println("* Combo Doble (Hamburguesa doble + Bebida + Papas) -- $1200 X");}
+         
+         if (combo3>0) {
+             System.out.println("* Combo Triple (Hamburguesa triple + Bebida + Papas) -- $1400 X ");
+         }
+          if(combo4>0){
+              
+              System.out.println("* Postre (Cono de helado de vainilla y dulce de leche) -- $400 X");
+         }
+        
+        
         System.out.println("El monto total a abonar es $" + montoTotal);
         System.out.println("********************************************************************************");
         System.out.println("Proceda a elegir el medio de pago");
