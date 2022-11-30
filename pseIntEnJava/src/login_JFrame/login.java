@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import static proyectoFinal.Proyecto.menuPrincipal;
+import static proyectoFinal.Proyecto.*;
 
 
 
@@ -141,9 +141,8 @@ public class login extends javax.swing.JFrame {
                 String continuar = tecla.nextLine();
                 System.out.println("**********************************************");
                 System.out.println("**********************************************");
-                double montoTotal = 0; //Inicializamos la variable global
+                double montoTotal = 0; //Declaramos e inicializamos la variable montoTotal
                 menuPrincipal(montoTotal);//Instanciamos menuprincipal
-                
                 
             }
             else {

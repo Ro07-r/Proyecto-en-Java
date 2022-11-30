@@ -5,14 +5,15 @@ import java.util.Scanner;
 
 public class Proyecto {
 
-    static double montoTotal; //Declaramos una variable global
+    //Declaramos la variables combo
+    static int combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboPound;
+    static int comboCapuccino, comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss;
+            
 
     public static void main(String[] args) {
-        //Llamamos al menú principal desde el método main
-        montoTotal = 0; //Inicializamos la variable global
+        //Llamamos al login desde el menú principal
         login login = new login();
         login.setVisible(true);
-        //menuPrincipal(montoTotal); 
     }
 
     //MENÚ PRINCIPAL DEL PROGRAMA 
@@ -28,7 +29,8 @@ public class Proyecto {
             System.out.println("Ingrese el número de la opción deseada: ");
             opcionMenuPrincipal = practica.nextInt();
             if (opcionMenuPrincipal == 1) {
-                ingresoPedido(montoTotal);
+                ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                        comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
             } else {
                 if (opcionMenuPrincipal == 2) {
                     System.out.println("Opcion 2");
@@ -246,23 +248,11 @@ public class Proyecto {
 
         }
     }
-
-    //METODO PARA FINALIZAR PEDIDO
-    public static void finalizarPedido(double montoTotal, int combo1, int combo2, int combo3, int opcionMenu, int comboCono,
-            int comboSundae, int comboMcFlurry, int opcionPostre, int opcionCafe, int comboCapuccino,
-            int comboCapTent, int comboMac, int comboSubm, int comboLatte, int comboFrappe, int comboCroiss,
-            int comboPound) {
-        System.out.println("********************************************************************************");
-        System.out.println("Se ha cerrado la orden");
-        System.out.println("El monto total a abonar es $" + montoTotal);
-        System.out.println("********************************************************************************");
-        System.out.println("Proceda a elegir el medio de pago");
-        pagarPedido(montoTotal);
-    }  
-
     //METODO PARA INGRESAR UN NUEVO PEDIDO
-    public static void ingresoPedido(double montoTotal) {
-        int combo1 = 0, combo2 = 0, combo3 = 0, comboCono = 0, comboSundae = 0, comboMcFlurry = 0, opcionPostre = 0, opcionMenu = 0, opcionCafe = 0, comboCapuccino = 0, comboCapTent = 0, comboMac = 0, comboSubm = 0, comboLatte = 0, comboFrappe = 0, comboCroiss = 0, comboPound = 0;
+    public static void ingresoPedido(double montoTotal, int combo1, int combo2, int combo3, int comboCono, int comboSundae, 
+            int comboMcFlurry, int comboCapuccino, int comboCapTent, int comboMac, int comboSubm, int comboLatte, 
+            int comboFrappe, int comboCroiss, int comboPound) {
+        int opcionPostre = 0, opcionMenu =0, opcionCafe =0;
         while (opcionMenu != 1 && opcionMenu != 2 && opcionMenu != 3 && opcionMenu != 4 && opcionMenu != 5) {
             System.out.println("----- Menu Mc UTN -----");
             System.out.println("Elija su pedido");
@@ -291,7 +281,8 @@ public class Proyecto {
                         System.out.println("**********************************************");
                         System.out.println("Se ha agregado el Combo Simple a su pedido");
                         System.out.println("**********************************************");
-                        ingresoPedido(montoTotal); 
+                        ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                 } else {
                     if(opcion == 2){
                         combo2 = combo2 + 1;
@@ -299,7 +290,8 @@ public class Proyecto {
                         System.out.println("**********************************************");
                         System.out.println("Se ha agregado el Combo Doble a su pedido");
                         System.out.println("**********************************************");
-                        ingresoPedido(montoTotal);
+                        ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                     } else {
                         if(opcion == 3){
                              combo3 = combo3 + 1;
@@ -307,7 +299,8 @@ public class Proyecto {
                              System.out.println("**********************************************");
                              System.out.println("Se ha agregado el Combo Triple a su pedido");
                              System.out.println("**********************************************");
-                             ingresoPedido(montoTotal);
+                             ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                    comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                         } else {
                             if(opcion == 4){
                                 System.out.println("");
@@ -316,12 +309,14 @@ public class Proyecto {
                                         opcionCafe, comboCapuccino, comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound);
                             } else {
                                 if(opcion == 5){
-                                    ingresoPedido(montoTotal);
+                                    ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                        comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                                 } else {
                                     System.out.println("");
                                     System.out.println("ERROR: La opción elegida no está dentro del menú. Vuelva a intentarlo.");
                                     System.out.println("");
-                                    ingresoPedido(montoTotal);
+                                    ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                        comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                                 }
                             }                            
                         }
@@ -345,7 +340,8 @@ public class Proyecto {
                         System.out.println("**********************************************");
                         System.out.println("Se ha agregado el postre Cono a su pedido --> $60");
                         System.out.println("**********************************************");
-                        ingresoPedido(montoTotal);
+                        ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                     } else {
                         if(opcionPostre == 2){
                             comboSundae = comboSundae + 1;
@@ -353,7 +349,8 @@ public class Proyecto {
                             System.out.println("**********************************************");
                             System.out.println("Se ha agregado el postre Sundae a su pedido --> $250");
                             System.out.println("**********************************************");
-                            ingresoPedido(montoTotal);
+                            ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                         } else {
                             if(opcionPostre == 3){
                                 comboMcFlurry = comboMcFlurry + 1;
@@ -361,7 +358,8 @@ public class Proyecto {
                                 System.out.println("**********************************************");
                                 System.out.println("Se ha agregado el postre McFlurry a su pedido --> $350");
                                 System.out.println("**********************************************");
-                                ingresoPedido(montoTotal);
+                                ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                             } else {
                                 if(opcionPostre == 4){
                                     System.out.println("");
@@ -370,12 +368,14 @@ public class Proyecto {
                                             comboCroiss, comboPound);
                                 } else {
                                     if(opcionPostre == 5){
-                                        ingresoPedido(montoTotal);
+                                        ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                            comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                                     } else {
                                         System.out.println("");
                                         System.out.println("ERROR: La opción elegida no está dentro del menú. Vuelva a intentarlo.");
                                         System.out.println("");
-                                        ingresoPedido(montoTotal);
+                                        ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                            comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                                     }
                                 }
                             }
@@ -402,7 +402,8 @@ public class Proyecto {
                             System.out.println("**********************************************");
                             System.out.println("Se ha agregado Capuccino a su pedido");
                             System.out.println("**********************************************");
-                            ingresoPedido(montoTotal);
+                            ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                         } else {
                             if(opcionCafe == 2){
                                 comboCapTent = comboCapTent + 1;
@@ -410,7 +411,8 @@ public class Proyecto {
                                 System.out.println("**********************************************");
                                 System.out.println("Se ha agregado Capuccino Tentación a su pedido");
                                 System.out.println("**********************************************");
-                                ingresoPedido(montoTotal);
+                                ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                    comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                             } else {
                                 if(opcionCafe == 3){
                                     comboMac = comboMac + 1;
@@ -418,7 +420,8 @@ public class Proyecto {
                                     System.out.println("**********************************************");
                                     System.out.println("Se ha agregado Macchiato Bombón a su pedido");
                                     System.out.println("**********************************************");
-                                    ingresoPedido(montoTotal);
+                                    ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                        comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                                 } else {
                                     if(opcionCafe == 4){
                                         comboSubm = comboSubm + 1;
@@ -426,7 +429,8 @@ public class Proyecto {
                                         System.out.println("**********************************************");
                                         System.out.println("Se ha agregado Submarino a su pedido");
                                         System.out.println("**********************************************");
-                                        ingresoPedido(montoTotal);
+                                        ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                                comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                                     } else {
                                         if(opcionCafe == 5){
                                             comboLatte = comboLatte + 1;
@@ -434,7 +438,8 @@ public class Proyecto {
                                             System.out.println("**********************************************");
                                             System.out.println("Se ha agregado Latte a su pedido");
                                             System.out.println("**********************************************");
-                                            ingresoPedido(montoTotal);
+                                            ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                                    comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                                         } else {
                                             if(opcionCafe == 6){
                                                 comboFrappe = comboFrappe + 1;
@@ -442,7 +447,8 @@ public class Proyecto {
                                                 System.out.println("**********************************************");
                                                 System.out.println("Se ha agregado Frappe a su pedido");
                                                 System.out.println("**********************************************");
-                                                ingresoPedido(montoTotal);
+                                                ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                                    comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                                             } else {
                                                 if(opcionCafe == 7){
                                                     comboCroiss = comboCroiss + 1;
@@ -450,7 +456,8 @@ public class Proyecto {
                                                     System.out.println("**********************************************");
                                                     System.out.println("Se ha agregado Croissant a su pedido");
                                                     System.out.println("**********************************************");
-                                                    ingresoPedido(montoTotal);
+                                                    ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                                            comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                                                 } else {
                                                     if(opcionCafe == 8){
                                                         comboPound = comboPound + 1;
@@ -458,7 +465,8 @@ public class Proyecto {
                                                         System.out.println("**********************************************");
                                                         System.out.println("Se ha agregado Poundcake a su pedido");
                                                         System.out.println("**********************************************");
-                                                        ingresoPedido(montoTotal);
+                                                        ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                                               comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                                                     } else {
                                                         if(opcionCafe == 9){
                                                             System.out.println("");
@@ -468,12 +476,14 @@ public class Proyecto {
                                                         } else {
                                                             if(opcionCafe == 10){
                                                                 System.out.println("");
-                                                                ingresoPedido(montoTotal);
+                                                                ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                                                        comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
                                                             } else {
                                                                 System.out.println("************************************************************************");
                                                                 System.out.println("ERROR: La opción elegida no está dentro del menú. Vuelva a intentarlo.");
                                                                 System.out.println("************************************************************************");
-                                                                ingresoPedido(montoTotal);                                                                
+                                                                ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
+                                                                    comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound);                                                                
                                                             }
                                                         }
                                                     }
@@ -507,4 +517,70 @@ public class Proyecto {
             }
         }
     }
+    
+     // MÉTODO PARA MOSTRAR COMBOS SELECCIONADOS Y CANTIDAD
+    public static void mostrarCombos(int combo1, int combo2, int combo3, int comboCono, int comboSundae,
+            int comboMcFlurry, int comboCapuccino, int comboCapTent, int comboMac, int comboSubm,
+            int comboLatte, int comboFrappe, int comboCroiss, int comboPound){
+        if (combo1>0){ // Si el combo1 fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Combo Simple (Hamburguesa simple + Bebida + Papas) X "+combo1);
+        }
+        if (combo2>0){ // Si el combo2 fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Combo Doble (Hamburguesa doble + Bebida + Papas) X "+ combo2);
+        }
+        if (combo3>0){ // Si el combo3 fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Combo Triple (Hamburguesa triple + Bebida + Papas) X "+ combo3);
+        }
+        if (comboCono>0){ // Si el Cono de Helado fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Cono de Helado  X  "+ comboCono);
+        }
+        if (comboSundae>0){ // Si el Sundae fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Helado Sundae X "+ comboSundae);
+        }
+        if (comboMcFlurry>0){ // Si el McFlurry fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Helado McFlurry X "+ comboMcFlurry);
+        }
+        if (comboCapuccino>0){ // Si el Capuccino fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Capuccino X "+ comboCapuccino);
+        }
+        if (comboCapTent>0){ // Si el Capuccino Tentacion fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Capuccino Tentación X "+ comboCapTent);
+        }
+        if (comboMac>0){ // Si el Macchiato fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Macchiato X "+ comboMac);
+        }
+        if (comboSubm>0){ // Si el Submarino fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Submarino X "+ comboSubm);
+        }
+        if (comboLatte>0){ // Si el Latte fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Latte X "+ comboLatte);
+        }
+        if (comboFrappe>0){ // Si el comboFrappe fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Frappe X "+ comboFrappe);
+        }
+        if (comboCroiss>0){ // Si el Frappe fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Croissant X "+ comboCroiss);
+        }
+        if (comboPound>0){ // Si el Croissant fue elegido muestro el nombre del combo y la cantidad seleccionada
+            System.out.println("* Poundcake X "+ comboPound);
+        }
+        
+    }
+    
+     //METODO PARA FINALIZAR PEDIDO
+    public static void finalizarPedido(double montoTotal, int combo1, int combo2, int combo3, int opcionMenu, int comboCono,
+            int comboSundae, int comboMcFlurry, int opcionPostre, int opcionCafe, int comboCapuccino,
+            int comboCapTent, int comboMac, int comboSubm, int comboLatte, int comboFrappe, int comboCroiss,
+            int comboPound) {
+        System.out.println("********************************************************************************");
+        System.out.println("Se ha cerrado la orden");
+        //Llamo al método mostrarCombos para que se impriman los combos en pantalla
+        mostrarCombos(combo1, combo2, combo3, comboCono,comboSundae, comboMcFlurry, comboCapuccino, 
+                comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound);
+        System.out.println("");
+        System.out.println("El monto total a abonar es $" + montoTotal);
+        System.out.println("********************************************************************************");
+        System.out.println("Proceda a elegir el medio de pago");
+        pagarPedido(montoTotal);
+    }  
 }
