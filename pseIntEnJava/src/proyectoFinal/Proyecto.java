@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Proyecto {
 
-    //Declaramos la variables combo
+    //Declaramos las variables combo
     static int combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboPound;
     static int comboCapuccino, comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss;
             
@@ -59,6 +59,7 @@ public class Proyecto {
             System.out.println("----- Elija el medio de pago -----");
             System.out.println("1. Efectivo");
             System.out.println("2. Credito");
+            System.out.println("3. Cancelar pago");
             Scanner practica = new Scanner(System.in);
             System.out.println("Ingrese el número de la opción deseada: ");
             opcionPago = practica.nextInt();
@@ -69,8 +70,13 @@ public class Proyecto {
                     System.out.println("");
                     planCuotas(montoTotal);
                 } else {
-                    System.out.println("");
-                    System.out.println("ERROR: La opción elegida no es válida. Porfavor vuelva a intentarlo.");
+                    if (opcionPago == 3) {
+                        montoTotal = 0;
+                        menuPrincipal(montoTotal);
+                    } else {
+                        System.out.println("");
+                        System.out.println("ERROR: La opción elegida no es válida. Porfavor vuelva a intentarlo.");
+                    }                    
                 }
             }
         }
@@ -183,27 +189,26 @@ public class Proyecto {
         }
     }
 
-    //metodo para pagar en 2 cuotas 
+    //Metodo para pagar en 2 cuotas 
     public static void pagoDosCuotas(double montoTotal) {
-        pagoConTarjeta(montoTotal);
-        System.out.println(" ");
         double cuotas, opcionDosCuotas;
         opcionDosCuotas = montoTotal + (montoTotal * 0.05);
         cuotas = opcionDosCuotas / 2;
+        System.out.println("El precio final es: $"+ opcionDosCuotas + " y las cuotas son de: $"+ cuotas);
         System.out.println("");
-        System.out.println("El precio final es: $" + opcionDosCuotas + " y las cuotas de:$ " + cuotas);
+        pagoConTarjeta(montoTotal);
+        System.out.println(" ");        
     }
 
-    //Metodo Para pagar en 3 cuotas 
+    //Metodo para pagar en 3 cuotas 
     public static void pagoTresCuotas(double montoTotal) {
-        pagoConTarjeta(montoTotal);
-        System.out.println(" ");
         double cuotas, opcionTresCuotas;
         opcionTresCuotas = montoTotal + (montoTotal * 0.10);
         cuotas = opcionTresCuotas / 3;
+        System.out.println("El precio final es: $"+ opcionTresCuotas + " y las cuotas son de: $"+ cuotas);
+        System.out.println(" ");
+        pagoConTarjeta(montoTotal);        
         System.out.println("");
-        System.out.println("El precio final es: $ " + opcionTresCuotas + " y las cuotas de:$ " + cuotas);
-
     }
 
     //METODO PARA PAGAR EN EFECTIVO
@@ -245,7 +250,6 @@ public class Proyecto {
                     }
                 }
             }
-
         }
     }
     //METODO PARA INGRESAR UN NUEVO PEDIDO
@@ -523,7 +527,7 @@ public class Proyecto {
             int comboMcFlurry, int comboCapuccino, int comboCapTent, int comboMac, int comboSubm,
             int comboLatte, int comboFrappe, int comboCroiss, int comboPound){
         if (combo1>0){ // Si el combo1 fue elegido muestro el nombre del combo y la cantidad seleccionada
-            System.out.println("* Combo Simple (Hamburguesa simple + Bebida + Papas) X "+combo1);
+            System.out.println("* Combo Simple (Hamburguesa simple + Bebida + Papas) X "+ combo1);
         }
         if (combo2>0){ // Si el combo2 fue elegido muestro el nombre del combo y la cantidad seleccionada
             System.out.println("* Combo Doble (Hamburguesa doble + Bebida + Papas) X "+ combo2);
