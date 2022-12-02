@@ -137,12 +137,13 @@ public class login extends javax.swing.JFrame {
                 System.out.println("**********************************************");
                 System.out.println("     Bienvenido/a "+ user + " a McUTN         ");
                 System.out.println("");
-                System.out.println("      Presione Enter para continuar...          ");
+                System.out.println("      Presione cualquier tecla para continuar...          ");
                 String continuar = tecla.nextLine();
                 System.out.println("**********************************************");
                 System.out.println("**********************************************");
                 double montoTotal = 0; //Declaramos e inicializamos la variable montoTotal
-                menuPrincipal(montoTotal);//Instanciamos menuprincipal
+                McUtn();//Llamamos al cartel de bienvenida
+                menuPrincipal(montoTotal);//Llamamos al Menú principal
                 
             }
             else {

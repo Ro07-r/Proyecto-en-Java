@@ -3,9 +3,22 @@ package proyectoFinal;
 import login_JFrame.login;
 import java.util.Scanner;
 
-// Cartel de Bienvenida
-class Bienvenidos{
-        static void McUtn(){
+
+public class Proyecto {
+
+    //Declaramos las variables combo
+    static int combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboPound;
+    static int comboCapuccino, comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss;
+            
+
+    public static void main(String[] args) {
+        //Llamamos al login desde el menú principal
+        login login = new login();
+        login.setVisible(true);
+    } 
+    
+    //Cartel de bienvenida
+    public static void McUtn(){
             System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
             System.out.println("    IIII         III  II         II    IIIIII  II  IIIIIIIIII  II         II    IIIIII  II  II        IIIIIIII      IIII         IIIIIIIIIIIIIIIII    IIIIIIIIIII");
             System.out.println("    IIII  IIIII   IIIIII  IIIIIIIII  I  IIIII  III  IIIIIIII  III  IIIIIIIII  I  IIIII  IIIIII  IIIII  IIIII  IIIII  III  IIIIIIIIIIIIIIIIIIIIIII  II  IIIIIIIIII");
@@ -29,27 +42,14 @@ class Bienvenidos{
             System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");  
             System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");        
         } 
-}
 
-// Inicio
-public class Proyecto {
-
-    //Declaramos las variables combo
-    static int combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboPound;
-    static int comboCapuccino, comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss;
-            
-
-    public static void main(String[] args) {
-        //Llamamos al login desde el menú principal
-        login login = new login();
-        login.setVisible(true);
-    } 
-
+    
+    
+    
     //MENÚ PRINCIPAL DEL PROGRAMA 
     public static void menuPrincipal(double montoTotal) {
         int opcionMenuPrincipal = 0;
-        
-        Bienvenidos.McUtn(); // Cartel de bienvenidos a Mc UTN
+                
         while (opcionMenuPrincipal != 1 && opcionMenuPrincipal != 2 && opcionMenuPrincipal != 3) {
             System.out.println("");
             System.out.println("----- Menú Principal Mc UTN -----");
@@ -105,6 +105,7 @@ public class Proyecto {
                 } else {
                     if (opcionPago == 3) {
                         montoTotal = 0;
+                        McUtn();
                         menuPrincipal(montoTotal);
                     } else {
                         System.out.println("");
@@ -191,6 +192,7 @@ public class Proyecto {
         System.out.println("------------------------------------------------");
         System.out.println("------------------------------------------------");
         montoTotal = 0; //Vuelve a cero el monto para que no siga sumando y poder iniciar un nuevo pedido
+        McUtn();
         menuPrincipal(montoTotal);
     }
 
@@ -270,6 +272,7 @@ public class Proyecto {
                     System.out.println("------------------------------------------------");
                     System.out.println("------------------------------------------------");
                     montoTotal = 0;
+                    McUtn();
                     menuPrincipal(montoTotal);
                 } else {
                     if (efectivo == pagoFinal) {
@@ -279,6 +282,7 @@ public class Proyecto {
                         System.out.println("------------------------------------------------");
                         System.out.println("------------------------------------------------");
                         montoTotal = 0;
+                        McUtn();
                         menuPrincipal(montoTotal);
                     }
                 }
