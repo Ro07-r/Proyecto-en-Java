@@ -3,6 +3,35 @@ package proyectoFinal;
 import login_JFrame.login;
 import java.util.Scanner;
 
+// Cartel de Bienvenida
+class Bienvenidos{
+        static void McUtn(){
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
+            System.out.println("    IIII         III  II         II    IIIIII  II  IIIIIIIIII  II         II    IIIIII  II  II        IIIIIIII      IIII         IIIIIIIIIIIIIIIII    IIIIIIIIIII");
+            System.out.println("    IIII  IIIII   IIIIII  IIIIIIIII  I  IIIII  III  IIIIIIII  III  IIIIIIIII  I  IIIII  IIIIII  IIIII  IIIII  IIIII  III  IIIIIIIIIIIIIIIIIIIIIII  II  IIIIIIIIII");
+            System.out.println("    IIII  IIII   III  II  IIIIIIIII  II  IIII  IIII  IIIIII  IIII  IIIIIIIII  II  IIII  II  II  IIIIII  III  IIIIIII  II  IIIIIIIIIIIIIIIIIIIIII  IIII  IIIIIIIII");
+            System.out.println("    IIII  II  IIIIII  II     IIIIII  III  III  IIIII  IIII  IIIII      IIIII  III  III  II  II  IIIIIII  II  IIIIIII  II         IIIIIIIIIIIIII  IIIIII  IIIIIIII");
+            System.out.println("    IIII  IIIII  III  II  IIIIIIIII  IIII  II  IIIIII  II  IIIIII  IIIIIIIII  IIII  II  II  II  IIIIII  III  IIIIIII  IIIIIIIII  IIIIIIIIIIIII            IIIIIII");
+            System.out.println("    IIII  IIIIII  II  II  IIIIIIIII  IIIII  I  IIIIIII    IIIIIII  IIIIIIIII  IIIII  I  II  II  IIIII  IIIII   IIII  IIIIIIIIII  IIIIIIIIIIII  IIIIIIIIII  IIIIII");
+            System.out.println("    IIII          II  II         II  IIIIII    IIIIIIII  IIIIIIII         II  IIIIII    II  II       IIIIIIII       IIII         IIIIIIIIIII  IIIIIIIIIIII  IIIII");
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"); 
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII "); 
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIII      IIII      IIII             IIIIIIIIIIIII   IIIIIII   III              III      IIIIII   IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"); 
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIII   II  II  II   IIII   IIIIIII   IIIIIIIIIIIII   IIIIIII   IIIIIIIII   IIIIIIII   I   IIIII   IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"); 
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIII   III   IIII   IIII   IIIIIIIIIIIIIIIIIIIIIII   IIIIIII   IIIIIIIII   IIIIIIII   II   IIII   IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII "); 
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIII   IIIIIIIIII   IIII   IIIIIIIIIIIIII     IIII   IIIIIII   IIIIIIIII   IIIIIIII   III   III   IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII "); 
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIII   IIIIIIIIII   IIII   IIIIIIIIIIIIIIIIIIIIIII   IIIIIII   IIIIIIIII   IIIIIIII   IIII   II   IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII "); 
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIII   IIIIIIIIII   IIII   IIIIIIIIIIIIIIIIIIIIIII   IIIIIII   IIIIIIIII   IIIIIIII   IIII   II   IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII "); 
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIII   IIIIIIIIII   IIII   IIIIIII   IIIIIIIIIIIII   IIIIIII   IIIIIIIII   IIIIIIII   IIIII   I   IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"); 	 
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIII   IIIIIIIIII   IIII             IIIIIIIIIIIII             IIIIIIIII   IIIIIIII   IIIIII      IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"); 	
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");  
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");  
+            System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");        
+        } 
+}
+
+// Inicio
 public class Proyecto {
 
     //Declaramos las variables combo
@@ -14,11 +43,13 @@ public class Proyecto {
         //Llamamos al login desde el menú principal
         login login = new login();
         login.setVisible(true);
-    }
+    } 
 
     //MENÚ PRINCIPAL DEL PROGRAMA 
     public static void menuPrincipal(double montoTotal) {
         int opcionMenuPrincipal = 0;
+        
+        Bienvenidos.McUtn(); // Cartel de bienvenidos a Mc UTN
         while (opcionMenuPrincipal != 1 && opcionMenuPrincipal != 2 && opcionMenuPrincipal != 3) {
             System.out.println("");
             System.out.println("----- Menú Principal Mc UTN -----");
@@ -28,6 +59,8 @@ public class Proyecto {
             Scanner practica = new Scanner(System.in);
             System.out.println("Ingrese el número de la opción deseada: ");
             opcionMenuPrincipal = practica.nextInt();
+            System.out.println("");
+
             if (opcionMenuPrincipal == 1) {
                 ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
                         comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
@@ -258,6 +291,7 @@ public class Proyecto {
             int comboFrappe, int comboCroiss, int comboPound) {
         int opcionPostre = 0, opcionMenu =0, opcionCafe =0;
         while (opcionMenu != 1 && opcionMenu != 2 && opcionMenu != 3 && opcionMenu != 4 && opcionMenu != 5) {
+            System.out.println("");
             System.out.println("----- Menu Mc UTN -----");
             System.out.println("Elija su pedido");
             System.out.println("1. Combos");
@@ -271,6 +305,7 @@ public class Proyecto {
             if (opcionMenu == 1) { //Mostramos los combos de hamburguesas
                 int opcion = 0; 
                 System.out.println("");
+                System.out.println("¡COMBOS!");
                 System.out.println("1. Combo Simple (Hamburguesa simple + Bebida + Papas) - $800");
                 System.out.println("2. Combo Doble (Hamburguesa doble + Bebida + Papas) - $1200");
                 System.out.println("3. Combo Triple (Hamburguesa triple + Bebida + Papas) - $1400");
@@ -387,6 +422,8 @@ public class Proyecto {
                     }
                 } else {
                     if (opcionMenu == 3) { //Mostramos las opciones de café
+                        System.out.println("");
+                        System.out.println("¡MC CAFE!");
                         System.out.println("1. Capuccino - $350");
                         System.out.println("2. Capuccino Tentación - $390");
                         System.out.println("3. Macchiato Bombón - $390");
