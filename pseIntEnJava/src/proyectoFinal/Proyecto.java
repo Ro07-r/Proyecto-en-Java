@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 
 public class Proyecto {
-
     //Declaramos las variables combo
     static int combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboPound;
     static int comboCapuccino, comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss;
@@ -41,15 +40,11 @@ public class Proyecto {
             System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");  
             System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");  
             System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");        
-        } 
-
-    
-    
+        }   
     
     //MENÚ PRINCIPAL DEL PROGRAMA 
     public static void menuPrincipal(double montoTotal) {
-        int opcionMenuPrincipal = 0;
-                
+        int opcionMenuPrincipal = 0;                
         while (opcionMenuPrincipal != 1 && opcionMenuPrincipal != 2 && opcionMenuPrincipal != 3) {
             System.out.println("");
             System.out.println("----- Menú Principal Mc UTN -----");
@@ -60,7 +55,6 @@ public class Proyecto {
             System.out.println("Ingrese el número de la opción deseada: ");
             opcionMenuPrincipal = practica.nextInt();
             System.out.println("");
-
             if (opcionMenuPrincipal == 1) {
                 ingresoPedido(montoTotal, combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboCapuccino,
                         comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound); 
@@ -69,13 +63,11 @@ public class Proyecto {
                     System.out.println("Opcion 2");
                     login login = new login();
                     login.setVisible(true);
-
                 } else {
                     if (opcionMenuPrincipal == 3) {
                         System.out.println("");
                         System.out.println("¡Gracias por su visita!");
-                        System.exit(0); //Termina el programa
-                        
+                        System.exit(0); //Termina el programa                        
                     } else {
                         System.out.println("");
                         System.out.println("ERROR: La opción elegida no está dentro del menú. Vuelva a intentarlo.");
@@ -232,7 +224,7 @@ public class Proyecto {
         System.out.println("El precio final es: $"+ opcionDosCuotas + " y las cuotas son de: $"+ cuotas);
         System.out.println("");
         pagoConTarjeta(montoTotal);
-        System.out.println(" ");        
+        System.out.println("");        
     }
 
     //Metodo para pagar en 3 cuotas 
@@ -241,7 +233,7 @@ public class Proyecto {
         opcionTresCuotas = montoTotal + (montoTotal * 0.10);
         cuotas = opcionTresCuotas / 3;
         System.out.println("El precio final es: $"+ opcionTresCuotas + " y las cuotas son de: $"+ cuotas);
-        System.out.println(" ");
+        System.out.println("");
         pagoConTarjeta(montoTotal);        
         System.out.println("");
     }
@@ -253,7 +245,7 @@ public class Proyecto {
         pagoFinal = montoTotal - (montoTotal * 0.05);
         System.out.println("");
         System.out.println("///5% de descuento///");
-        System.out.println("Pago final: " + pagoFinal);
+        System.out.println("Pago final: $" + pagoFinal);
         Scanner practica = new Scanner(System.in);
         while (efectivo < pagoFinal) {
             System.out.println("");
@@ -266,7 +258,7 @@ public class Proyecto {
                 if (efectivo > pagoFinal) {
                     vuelto = efectivo - pagoFinal;
                     System.out.println("");
-                    System.out.println("El vuelto del cliente es: " + vuelto);
+                    System.out.println("El vuelto del cliente es: $" + vuelto);
                     System.out.println("");
                     System.out.println("¡Gracias por su compra!");
                     System.out.println("------------------------------------------------");
@@ -289,6 +281,7 @@ public class Proyecto {
             }
         }
     }
+    
     //METODO PARA INGRESAR UN NUEVO PEDIDO
     public static void ingresoPedido(double montoTotal, int combo1, int combo2, int combo3, int comboCono, int comboSundae, 
             int comboMcFlurry, int comboCapuccino, int comboCapTent, int comboMac, int comboSubm, int comboLatte, 
@@ -624,8 +617,9 @@ public class Proyecto {
                 comboCapTent, comboMac, comboSubm, comboLatte, comboFrappe, comboCroiss, comboPound);
         System.out.println("");
         System.out.println("El monto total a abonar es $" + montoTotal);
-        System.out.println("********************************************************************************");
+        System.out.println("********************************************************************************");        
         System.out.println("Proceda a elegir el medio de pago");
+        System.out.println("");
         pagarPedido(montoTotal);
     }  
 }
