@@ -1,6 +1,9 @@
-# :black_medium_small_square: Proyecto Mc UTN :black_medium_small_square:
-***<La intención de este proyecto es desarrollar un
-sistema de ingreso de pedidos para una cadena de comida rápida.>***
+# Proyecto Mc UTN
+<img src="codebaires.jpg">
+<br>
+
+< ***La intención de este proyecto es desarrollar un
+sistema de ingreso de pedidos para una cadena de comida rápida***. >
 
 Datos para ingresar:
 
