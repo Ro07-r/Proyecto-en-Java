@@ -2,8 +2,8 @@
 <img src="codebaires.jpg">
 <br>
 
-< ***La intención de este proyecto es desarrollar un
-sistema de ingreso de pedidos para una cadena de comida rápida***. >
+<***La intención de este proyecto es desarrollar un
+sistema de ingreso de pedidos para una cadena de comida rápida***.>
 
 Datos para ingresar:
 
