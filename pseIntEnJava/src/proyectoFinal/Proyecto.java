@@ -4,6 +4,8 @@ import login_JFrame.login;
 import java.util.Scanner;
 
 
+
+
 public class Proyecto {
     //Declaramos las variables combo
     static int combo1, combo2, combo3, comboCono, comboSundae, comboMcFlurry, comboPound;
@@ -18,6 +20,7 @@ public class Proyecto {
     
     //Cartel de bienvenida
     public static void McUtn(){
+            System.out.println("    🍕 🌭 🍔  🍔 🌭 🍟 🥐 🍕 🍟 🍔 🍨 🍕 🍔 🍕 🌭 🍔  🍔 🌭 🍟 🥐 🍕 🍟 🍔 🍨 🍕 🍔 🍕 🌭 🍔  🍔 🌭 🍟 🥐 🍕 🍟 🍔 🍨 🍕 🍔 🌭 🍟 🥐 🍕 🍔 === CODE BAIRES ==== 🍟 🍕 🌭 🍔  🍕 🍟");
             System.out.println("    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
             System.out.println("    IIII         III  II         II    IIIIII  II  IIIIIIIIII  II         II    IIIIII  II  II        IIIIIIII      IIII         IIIIIIIIIIIIIIIII    IIIIIIIIIII");
             System.out.println("    IIII  IIIII   IIIIII  IIIIIIIII  I  IIIII  III  IIIIIIII  III  IIIIIIIII  I  IIIII  IIIIII  IIIII  IIIII  IIIII  III  IIIIIIIIIIIIIIIIIIIIIII  II  IIIIIIIIII");
